@@ -11,7 +11,7 @@ s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 s.bind((host, port))
 
-#plt.ion() ## Note this correction
+plt.ion()                 #Make plot interactive to allow updates
 fig=plt.figure()
 plt.axis([-10,20,-10,20])
 
@@ -35,6 +35,7 @@ while 1:
     print(points[2]+' , '+points[3])
     addData(x, points[2]);
     addData(y, points[3]);
+    plt.cla()
     plt.scatter(x, y);
     plt.show()
     plt.pause(0.0001)
